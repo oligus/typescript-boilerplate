@@ -7,8 +7,10 @@
     "clean": "rimraf lib",
     "build": "npm run clean && npm run build:prd",
     "prepublish": "npm run clean && npm run test && npm run build",
-    "build:prd": "webpack --config webpack.config.js",
-    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+    "build:prd": "node_modules/.bin/webpack --config webpack.config.js",
+    "test": "node_modules/.bin/mocha -r ts-node/register test/**/*.spec.ts",
+    "test:watch": "node_modules/.bin/nodemon -w test -w src -e ts -x  node_modules/.bin/mocha --reporter dot --compilers ts:ts-node/register test/**/*.spec.ts",
+    "lint": "node_modules/.bin/tslint src/**/*.ts test/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "chai": "^3.5.0",
     "install": "^0.8.7",
     "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
     "sinon": "^2.1.0",
     "ts-loader": "^2.0.3",
     "ts-node": "^3.0.2",

@@ -1,6 +1,6 @@
-export default class Hello {
+export class Hello {
     constructor(public greeting: string) { }
-    greet() {
+    public greet() {
         return "<h1>" + this.greeting + "</h1>";
     }
 }
