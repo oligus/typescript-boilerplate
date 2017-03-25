@@ -1,0 +1,41 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "Typescript boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && npm run build:prd",
+    "prepublish": "npm run clean && npm run test && npm run build",
+    "build:prd": "webpack --config webpack.config.js",
+    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oligus/typescript-boilerplate.git"
+  },
+  "keywords": [
+    "typescript",
+    "boilerplate"
+  ],
+  "author": "Oli Gustafsson",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/oligus/typescript-boilerplate/issues"
+  },
+  "homepage": "https://github.com/oligus/typescript-boilerplate#readme",
+  "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/mocha": "^2.2.40",
+    "@types/sinon": "^1.16.36",
+    "chai": "^3.5.0",
+    "install": "^0.8.7",
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0",
+    "ts-loader": "^2.0.3",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.1",
+    "typings": "^2.1.0",
+    "webpack": "^2.3.2"
+  }
+}
