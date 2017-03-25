@@ -12,6 +12,9 @@
     "test:watch": "node_modules/.bin/nodemon -w test -w src -e ts -x  node_modules/.bin/mocha --reporter dot --compilers ts:ts-node/register test/**/*.spec.ts",
     "lint": "node_modules/.bin/tslint src/**/*.ts test/**/*.spec.ts"
   },
+  "typescript": {
+    "definition": "typescript-boilerplate.d.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oligus/typescript-boilerplate.git"
